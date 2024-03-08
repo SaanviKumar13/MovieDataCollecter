@@ -6,7 +6,7 @@ url = (
     "https://www.imdb.com/search/title/?sort=user_rating,asc&groups=top_1000&count=100"
 )
 response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-print(response)
+
 page = BeautifulSoup(response.content, "html.parser")
 names = []
 release_date = []
@@ -77,4 +77,4 @@ movie_data = pd.DataFrame(
     }
 )
 
-print(metascore)
+movie_data.to_excel("Movie_Data_IMDB.xlsx", index=False)
