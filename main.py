@@ -37,7 +37,7 @@ for movie in movies_info:
     content_rating.append(
         movie.find_all(
             "span", attrs={"class": "sc-b0691f29-8 ilsLEX dli-title-metadata-item"}
-        )[1].text
+        )[2].text
     )
 
     vote_data = []
